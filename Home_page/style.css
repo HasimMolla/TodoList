@@ -310,9 +310,16 @@ body {
     position: relative;
 }
 
+.right-section .add_section{
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
 
 .right-section .add_section:hover {
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.15s ;
 }
 
 .right-section .add_section .line {
@@ -341,7 +348,8 @@ body {
     justify-content: flex-start;
     align-items: start;
     position: absolute;
-    margin-top: 20px;
+    /* margin-top: 10px; */
+    opacity: 0;
 
 }
 
@@ -403,9 +411,7 @@ body {
 }
 
 
-.right-section .add-section-outer {
-    opacity: 0;
-}
+
 
 
 
