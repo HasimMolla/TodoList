@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+    background-color: #FEFDFC;
+
+}
+.loader-main{
+    width: 100%;
+    height: 100%;
+    background-color: #FEFDFC;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.loader-main svg{
+    width: 70px;
+    height: 70px;
+    fill: #DE483A;
+
+}
+.loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #ff3d0017;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 24px 180px 0px 180px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    /* background-color: yellow; */
+}
+
+.login-page header {
+    width: 100%;
+    height: 70px;
+    padding: 0rem 0rem 2rem;
+    display: flex;
+    align-items: center;
+    /* background-color:red; */
+}
+
+.login-page header a img {
+    width: 128px;
+    height: 32px;
+}
+
+.login-page main {
+    width: 100%;
+    height: calc(100vh - 72px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 2rem;
+}
+
+main .login {
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid rebeccapurple; */
+    /* line-height: 77.05px; */
+}
+
+main .login h1 {
+    color: #232115;
+    text-align: start;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+main .login span {
+    padding: 8px 18px;
+    margin: 7px;
+    border: 1.5px solid rgba(0, 0, 0, 0.549);
+    /* border-radius:8px ; */
+}
+
+main .login a h3 {
+    letter-spacing: 0.155px;
+    font-size: 15.5px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #DE483A;
+    color: #FFF;
+    text-align: center;
+    margin-top: 2rem;
+}
+main .login a h3:hover{
+    background: #de483aec;
+    color: #ffffffde;
+    transition: all 0.2s linear;
+}
+
+main .video-sec {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.video-sec video {
+    height: 100%;
+    width: 100%;
+}
+
+.video-sec .box {
+    border-radius: 8px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .15);
+    color: #282f30;
+    left: 200px;
+    padding: 1rem;
+    position: absolute;
+    top: 262px;
+    transition: left .1s linear;
+    width: 320px;
+}
+
+.video-sec .box p {
+    color: #282f30;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -.02em;
+    line-height: 31px;
+    text-align: left;
+}
