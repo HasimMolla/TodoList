@@ -282,6 +282,7 @@ body {
     padding: 8px 0px;
     margin-top: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .right-section .add_task_right p {
@@ -300,6 +301,72 @@ body {
     transition: all 0.15s;
 }
 
+.right-section .add-section_inner {
+    width: 60%;
+    height: 25vh;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+    /* z-index: 999; */
+}
+
+.right-section .add-section_inner #name {
+    border: none;
+    color: rgba(165, 165, 165, 0.02);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    outline: none;
+
+
+}
+
+.right-section .add-section_inner #desc {
+    border: none;
+    color: #666;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px;
+    outline: none;
+}
+
+.right-section .button-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.right-section .button-inner .add_task_button {
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background: #eda59e;
+    color: #FFF;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all .15s;
+}
+.right-section .button-inner .cancel_task_button{
+    font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 5px;
+        font-weight: 500;
+        background-color: #f6f1f0;
+        color: #383737;
+        border: none;
+        text-align: center;
+        cursor: pointer;
+        transition: all .15s;
+}
+
+
 .right-section .add_section {
     width: 100%;
     display: flex;
@@ -310,7 +377,7 @@ body {
     position: relative;
 }
 
-.right-section .add_section{
+.right-section .add_section {
     opacity: 0;
     transition: opacity 0.15s;
 }
@@ -319,7 +386,7 @@ body {
 .right-section .add_section:hover {
     cursor: pointer;
     opacity: 1;
-    transition: opacity 0.15s ;
+    transition: opacity 0.15s;
 }
 
 .right-section .add_section .line {
@@ -369,7 +436,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
+
 }
 
 .right-section .add-section-outer .button .add-button {
@@ -383,7 +450,8 @@ body {
     cursor: pointer;
     transition: all .15s;
 }
-.right-section .add-section-outer .button .add-button:hover{
+
+.right-section .add-section-outer .button .add-button:hover {
     background-color: #DC4C3E;
     transition: all .15s;
 }
@@ -404,7 +472,7 @@ body {
     transition: all .15s;
 }
 
-.right-section .add-section-outer .button .cancel-button:hover{
+.right-section .add-section-outer .button .cancel-button:hover {
     background-color: #f6f1f0;
     transition: all .15s;
 
