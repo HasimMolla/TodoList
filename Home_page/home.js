@@ -1,10 +1,37 @@
 let addSection = document.querySelector('.add_section')
 let outerAddSection = document.querySelector('.add-section-outer')
+
+let innerAddTask = document.querySelector('.add-section_inner')
+
 let middleImage = document.querySelector('.middle-img')
+
 let cancelButton = document.querySelector('.cancel-button')
+let cancelTaskButton = document.querySelector('.cancel_task_button')
+
 let inputTaskName = document.querySelector('#name')
 let addTaskButton = document.querySelector('.add_task_right')
-let innerAddTask = document.querySelector('.add-section_inner')
+
+// edit task 
+let editSection = document.querySelector('.edit-task')
+let editInner = document.querySelector('.inner_edit_section')
+
+
+// after add section
+  
+
+let afterAddSection = document.querySelector('.after_add-section')
+
+// submit section
+
+const sectionForm = document.querySelector('form')
+
+
+
+
+
+
+
+
 
 inputTaskName.addEventListener('click', (e) => {
     inputTaskName.style.border = "0.5px solid #80808041";
@@ -13,6 +40,7 @@ inputTaskName.addEventListener('click', (e) => {
 addSection.addEventListener('click', function (e) {
     // console.log(e.target);
     addSection.style.opacity = "0"
+
     outerAddSection.style.opacity = '1'
     middleImage.style.display = 'none'
 })
@@ -20,11 +48,93 @@ addSection.addEventListener('click', function (e) {
 cancelButton.addEventListener('click', function (e) {
     outerAddSection.style.opacity = '0'
     middleImage.style.display = 'flex'
-    addSection.style.opacity = '1'
+    addSection.style.opacity = "1"
 })
 
 
+
+// add task 
 addTaskButton.addEventListener('click', function (e) {
     addTaskButton.style.opacity = '0'
     innerAddTask.style.opacity = '1'
+})
+
+cancelTaskButton.addEventListener('click', (e) => {
+    innerAddTask.style.opacity = '0'
+    addTaskButton.style.opacity ='1'
+})
+
+
+sectionForm.addEventListener('submit', (e) => {
+    // alert('submit')
+
+    let nameSection = e.target.sectionName.value;
+    let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
+    sectionData.push({
+        'nameSection': nameSection
+    })
+
+    localStorage.setItem('sectionDetails', JSON.stringify(sectionData))
+    e.target.reset()
+    displayData();
+
+    console.log(sectionData);
+
+    console.log(nameSection);
+    e.preventDefault();
+
+})
+
+let displayData = () => {
+    let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
+    let finalData = '';
+
+    sectionData.forEach((element, i) => {
+        console.log(element);
+
+        finalData += `
+            <div class="inner_after_add_section">
+                    <h3>${element.nameSection}</h3>
+                    <div class="edit-task">
+                        <img src="../assets/more.svg" alt="" />
+                    </div>
+
+                    <div class="inner_edit_section">
+                        <div class="edit_section">
+                            <img src="../assets/view.svg" alt="" />
+                            <h5>Edit section </h5>
+                        </div>
+                        <div class="edit_section">
+                            <img src="../assets/comments.svg" alt="" />
+                            <h5>Delete section </h5>
+                        </div>
+                    </div>
+                   </div>
+                    <div class="add_task_right">
+                        <img src="../assets/add_icon_three.svg" alt="">
+                        <p>Add task</p>
+                    </div>
+
+        `
+    });
+
+
+    afterAddSection.innerHTML = finalData;
+
+    console.log(finalData);
+    console.log(sectionData);
+}
+
+displayData()
+
+// edit section
+
+
+editSection.addEventListener('click', (e) => {
+    editInner.style.opacity = '1'
+    alert('hi')
+})
+
+editSection.addEventListener('dblclick', (e) => {
+    editInner.style.opacity = '0'
 })
