@@ -13,7 +13,7 @@ let addTaskButton = document.querySelector('.add_task_right')
 
 // edit task 
 let editSection = document.querySelector('.edit-task')
-let editInner = document.querySelector('.inner_edit_section')
+
 
 
 // after add section
@@ -46,7 +46,7 @@ addSection.addEventListener('click', function (e) {
 })
 
 cancelButton.addEventListener('click', function (e) {
-    outerAddSection.style.opacity = '0'
+    outerAddSection.style.display = 'none'
     middleImage.style.display = 'flex'
     addSection.style.opacity = "1"
 })
@@ -64,6 +64,20 @@ cancelTaskButton.addEventListener('click', (e) => {
     addTaskButton.style.opacity ='1'
 })
 
+const toggleFunction = () => {
+    let editInner = document.querySelector('.inner_edit_section')
+    let contain = editInner.classList.contains("none") 
+    if (contain) {
+        editInner.classList.add("flex") 
+        editInner.classList.remove('none')
+    }
+    else {
+        editInner.classList.add("none") 
+        editInner.classList.remove('flex')
+    }
+  console.log(contain);
+}
+
 
 sectionForm.addEventListener('submit', (e) => {
     // alert('submit')
@@ -78,33 +92,41 @@ sectionForm.addEventListener('submit', (e) => {
     e.target.reset()
     displayData();
 
+    
+
     console.log(sectionData);
 
     console.log(nameSection);
     e.preventDefault();
+    
 
 })
+
+const deleteSection = (e) => {
+    console.log(e);
+}
 
 let displayData = () => {
     let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
     let finalData = '';
 
     sectionData.forEach((element, i) => {
-        console.log(element);
+        console.log(i);
 
         finalData += `
+        <div class = "whole_inner_edit_section">
             <div class="inner_after_add_section">
                     <h3>${element.nameSection}</h3>
-                    <div class="edit-task">
+                    <div onclick="toggleFunction()"  class="edit-task">
                         <img src="../assets/more.svg" alt="" />
                     </div>
 
-                    <div class="inner_edit_section">
+                    <div  class="inner_edit_section none">
                         <div class="edit_section">
                             <img src="../assets/view.svg" alt="" />
                             <h5>Edit section </h5>
                         </div>
-                        <div class="edit_section">
+                        <div onclick="deleteSection(${i})" class="delete_section">
                             <img src="../assets/comments.svg" alt="" />
                             <h5>Delete section </h5>
                         </div>
@@ -113,6 +135,8 @@ let displayData = () => {
                     <div class="add_task_right">
                         <img src="../assets/add_icon_three.svg" alt="">
                         <p>Add task</p>
+                    </div>
+
                     </div>
 
         `
@@ -130,11 +154,31 @@ displayData()
 // edit section
 
 
-editSection.addEventListener('click', (e) => {
-    editInner.style.opacity = '1'
-    alert('hi')
-})
+// editSection.addEventListener('click', (e) => {
+//     editInner.style.opacity = '1'
+//     alert('hi')
+// })
+//
+// editSection.addEventListener('dblclick', (e) => {
+//     editInner.style.opacity = '0'
+// })
 
-editSection.addEventListener('dblclick', (e) => {
-    editInner.style.opacity = '0'
+
+// delete task
+
+// const wholeSection = document.querySelector('.whole_inner_edit_section')
+
+const taskDelete = document.querySelector('.delete_section')
+
+taskDelete.addEventListener('click', (e) => {
+    // afterAddSection.remove()
+    // addSection.removeChild(afterAddSection)
+    // afterAddSection.removeChild(wholeSection)
+    // console.log(e);
+
+    // localStorage.removeItem(sectionData)
+
+
+
+
 })

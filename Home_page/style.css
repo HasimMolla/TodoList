@@ -375,6 +375,36 @@ body {
     transition: all .15s;
 }
 
+.right-section .after-add-task {
+    width: 100%;
+}
+
+.right-section .after-add-task .after_add_task_inner{
+    display: flex;
+    justify-content: flex-start;
+}
+.right-section .after-add-task .after_add_task_inner .complete_task{
+    width: 18px;
+    height: 18px;
+    border: 1px solid #9f999d;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.right-section .after-add-task .after_add_task_inner  h4{
+    color: #474c63;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.right-section .after-add-task p{
+    font-size: 12px;
+    color: #7e7b7b;
+    font-weight: 400;
+    margin: 8px 0px 0px 28px;
+}
+
+
 
 .right-section .add_section {
     width: 100%;
@@ -452,7 +482,7 @@ body {
 
 .right-section .after_add-section .inner_edit_section {
     right: 5px;
-    top: 380px;
+    top: 400px;
     width: 200px;
     height: 150px;
     padding: 10px;
@@ -463,7 +493,10 @@ body {
     flex-direction: column;
     gap: 10px;
     position: absolute;
-    opacity: 0;
+    /* z-index: 9; */
+    /* opacity: 0; */
+   /* background-color: #DC4C3E; */
+
 }
 
 .right-section .after_add-section .inner_edit_section .edit_section {
@@ -471,9 +504,22 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .right-section .after_add-section .inner_edit_section .edit_section h5 {
+    font-size: 14px;
+    font-weight: 400;
+}
+.right-section .after_add-section .inner_edit_section .delete_section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.right-section .after_add-section .inner_edit_section .delete_section h5 {
     font-size: 14px;
     font-weight: 400;
 }
@@ -602,4 +648,12 @@ body {
     color: #DC4C3E;
     text-decoration: underline;
 
+}
+
+.none{
+    display: none !important;
+}
+
+.flex{
+    display: flex !important;
 }
