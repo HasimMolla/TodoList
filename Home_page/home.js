@@ -15,15 +15,19 @@ let addTaskButton = document.querySelector('.add_task_right')
 let editSection = document.querySelector('.edit-task')
 
 
-
 // after add section
-
 
 let afterAddSection = document.querySelector('.after_add-section')
 
 // submit section
 
 const sectionForm = document.querySelector('form')
+
+
+// Form Validation
+if (!localStorage.getItem('loginValidation')) {
+    window.location.href = '/Login'
+}
 
 
 // edit section
@@ -42,6 +46,8 @@ const funEdit = (e) => {
     displayData();
 
 }
+
+
 
 
 
@@ -168,34 +174,3 @@ const removeSection = (index) => {
 
 displayData()
 
-// edit section
-
-
-// editSection.addEventListener('click', (e) => {
-//     editInner.style.opacity = '1'
-//     alert('hi')
-// })
-//
-// editSection.addEventListener('dblclick', (e) => {
-//     editInner.style.opacity = '0'
-// })
-
-
-// delete task
-
-// const wholeSection = document.querySelector('.whole_inner_edit_section')
-
-// const taskDelete = document.querySelector('.delete_section')
-// 
-// taskDelete.addEventListener('click', (e) => {
-//     // afterAddSection.remove()
-//     // addSection.removeChild(afterAddSection)
-//     // afterAddSection.removeChild(wholeSection)
-//     // console.log(e);
-// 
-//     // localStorage.removeItem(sectionData)
-// 
-// 
-// 
-// 
-// })
