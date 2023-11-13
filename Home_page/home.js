@@ -117,7 +117,7 @@ sectionForm.addEventListener('submit', (e) => {
 
 })
 
-
+// display section  
 
 let displayData = () => {
     let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
@@ -154,6 +154,8 @@ let displayData = () => {
     // console.log(sectionData);
 }
 
+
+// delete section 
 const removeSection = (index) => {
     // alert(index)
     let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
