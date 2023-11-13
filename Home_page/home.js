@@ -26,7 +26,22 @@ let afterAddSection = document.querySelector('.after_add-section')
 const sectionForm = document.querySelector('form')
 
 
+// edit section
 
+const funEdit = (e) => {
+    let promptEdit = prompt("Please edit your section name:") 
+    let promtEditObj = {
+        "nameSection" : promptEdit
+    }
+   
+    let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
+    
+    sectionData.splice(e, 1, promtEditObj)
+    console.log(sectionData);
+    localStorage.setItem('sectionDetails', JSON.stringify(sectionData))
+    displayData();
+
+}
 
 
 
@@ -117,7 +132,7 @@ let displayData = () => {
                     <h3>${element.nameSection}</h3>
                     <div class="edit-task">
                         <img  onclick="removeSection(${i})"  src="../assets/delete_icon.png" alt="" />
-                         <img src="../assets/edit_icon.png" alt="" />
+                         <img onclick="funEdit(${i})" src="../assets/edit_icon.png" alt="" />
                     </div>
 
                   
