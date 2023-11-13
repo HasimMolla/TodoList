@@ -115,8 +115,9 @@ let displayData = () => {
         <div class = "whole_inner_edit_section">
             <div class="inner_after_add_section">
                     <h3>${element.nameSection}</h3>
-                    <div onclick="removeSection(${i})" class="edit-task">
-                        <img src="../assets/more.svg" alt="" />
+                    <div class="edit-task">
+                        <img  onclick="removeSection(${i})"  src="../assets/delete_icon.png" alt="" />
+                         <img src="../assets/edit_icon.png" alt="" />
                     </div>
 
                   

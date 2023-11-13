@@ -449,6 +449,9 @@ body {
 
 .right-section .after_add-section {
     width: 100%;
+    /* background-color: #f6efee; */
+    border-radius: 15px;
+    padding: 0px 10px;
     
 
 }
@@ -469,6 +472,9 @@ body {
 
 .right-section .after_add-section .edit-task img {
     position: relative;
+    margin-left:10px ;
+    width: 23px;
+    height: 23px;
 }
 
 .right-section .after_add-section .edit-task img:hover {
