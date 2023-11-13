@@ -105,30 +105,45 @@ main .login {
 
 main .login h1 {
     color: #232115;
-    text-align: start;
+    text-align: center;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 2rem;
 }
-
-main .login span {
-    padding: 8px 18px;
+main .login .input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .login  h5{
+    font-size: 15px;
+    color:#7b8d8f ;
+    font-weight: 600;
+    text-align: center;
+}
+main .login  .input-box input {
+    height: 35px;
+    width: 80%px;
+    padding:5px;
     margin: 7px;
     border: 1.5px solid rgba(0, 0, 0, 0.549);
     /* border-radius:8px ; */
 }
 
-main .login a h3 {
+main .login a button {
     letter-spacing: 0.155px;
     font-size: 15.5px;
     padding: 9px 14px;
+    border: none;
+    width: 100%;
     border-radius: 8px;
     background: #DE483A;
     color: #FFF;
     text-align: center;
     margin-top: 2rem;
+    cursor: pointer;
 }
-main .login a h3:hover{
+main .login a button:hover{
     background: #de483aec;
     color: #ffffffde;
     transition: all 0.2s linear;
