@@ -1,26 +1,28 @@
 let addSection = document.querySelector('.add_section')
 let outerAddSection = document.querySelector('.add-section-outer')
 
-let innerAddTask = document.querySelector('.add-section_inner')
+let innerAddTask = document.querySelector('.add_section_inner')
 
 let middleImage = document.querySelector('.middle-img')
 
 let cancelButton = document.querySelector('.cancel-button')
 let cancelTaskButton = document.querySelector('.cancel_task_button')
 
+let afterAddTask = document.querySelector(".add_task_inner");
+
 let inputTaskName = document.querySelector('#name')
-let addTaskButton = document.querySelector('.add_task_right')
+// let addTaskButton = document.querySelector('.add_task_right')
+
 
 // edit task 
 let editSection = document.querySelector('.edit-task')
 
 
 // after add section
-
 let afterAddSection = document.querySelector('.after_add-section')
 
-// submit section
 
+// submit section
 const sectionForm = document.querySelector('form')
 
 
@@ -47,42 +49,57 @@ const funEdit = (e) => {
 
 }
 
+// edit section ends here
 
+// add task
 
+const addtask = (e) => {
+    console.log(e);
+    innerAddTask.style.display = 'flex'
+    middleImage.style.display = 'none'
+    // addTaskButton.style.display = 'none'
+}
 
-
-
-
+// input task click 
 
 inputTaskName.addEventListener('click', (e) => {
     inputTaskName.style.border = "0.5px solid #80808041";
 })
 
+// add section 
+
 addSection.addEventListener('click', function (e) {
     // console.log(e.target);
-    addSection.style.opacity = "0"
-
-    outerAddSection.style.opacity = '1'
+    addSection.style.display = 'none'
+     
+    outerAddSection.style.display = 'flex'
     middleImage.style.display = 'none'
 })
 
+// cancel section 
 cancelButton.addEventListener('click', function (e) {
     outerAddSection.style.display = 'none'
     middleImage.style.display = 'flex'
-    addSection.style.opacity = "1"
+    addSection.style.display = "flex"
 })
 
 
 
 // add task 
-addTaskButton.addEventListener('click', function (e) {
-    addTaskButton.style.opacity = '0'
-    innerAddTask.style.opacity = '1'
-})
+// addTaskButton.addEventListener('click', function (e) {
+//     addTaskButton.style.display = 'none'
+//     innerAddTask.style.display = 'flex'
+//     middleImage.style.display = 'none'
+//     console.log('hi');
+// })
 
+
+
+// cancel task 
 cancelTaskButton.addEventListener('click', (e) => {
-    innerAddTask.style.opacity = '0'
-    addTaskButton.style.opacity = '1'
+    innerAddTask.style.display = 'none'
+    // addTaskButton.style.display = 'flex'
+    middleImage.style.display='flex'
 })
 
 const toggleFunction = () => {
@@ -99,6 +116,7 @@ const toggleFunction = () => {
     console.log(contain);
 }
 
+// Local Storage save 
 
 sectionForm.addEventListener('submit', (e) => {
     // alert('submit')
@@ -143,12 +161,17 @@ let displayData = () => {
 
                   
                    </div>
-                    <div class="add_task_right">
+                    <div onclick="addtask(${i})" class="add_task_right">
                         <img src="../assets/add_icon_three.svg" alt="">
                         <p>Add task</p>
                     </div>
+                  
+                    
+                    
 
                     </div>
+
+                    
 
         `
     });
@@ -165,12 +188,64 @@ let displayData = () => {
 const removeSection = (index) => {
     // alert(index)
     let sectionData = JSON.parse(localStorage.getItem('sectionDetails')) ?? [];
+    let TaskData = JSON.parse(localStorage.getItem("taskDetails")) ?? [];
     console.log(sectionData);
     sectionData.splice(index, 1);
+    TaskData.splice(index,9)
 
     localStorage.setItem('sectionDetails', JSON.stringify(sectionData))
+    localStorage.setItem("taskDetails", JSON.stringify(TaskData));
+   
     displayData();
+     displayTask();
 }
 
 displayData()
+
+
+
+
+innerAddTask.addEventListener("submit", (e) => {
+  //   alert('submit')
+
+  let nameTask = e.target.Task_name.value;
+  let TaskData = JSON.parse(localStorage.getItem("taskDetails")) ?? [];
+  TaskData.push({
+    nameTask: nameTask,
+  });
+
+  localStorage.setItem("taskDetails", JSON.stringify(TaskData));
+  e.target.reset();
+  displayTask();
+
+  // console.log(sectionData);
+
+  // console.log(nameSection);
+  e.preventDefault();
+});
+
+let displayTask = () => {
+  let TaskData = JSON.parse(localStorage.getItem("taskDetails")) ?? [];
+  let TaskfinalData = "";
+
+  TaskData.forEach((element, i) => {
+    console.log(i);
+
+    TaskfinalData += `
+                    <div class="after-add-task">
+                    <div class="complete_task"></div>
+                    <h4>${element.nameTask}</h4>
+                    </div>
+    
+        `;
+  });
+
+  afterAddTask.innerHTML = TaskfinalData;
+
+  // console.log(finalData);
+  // console.log(sectionData);
+};
+
+displayTask();
+
 

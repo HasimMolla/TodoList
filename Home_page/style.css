@@ -253,6 +253,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    /* background-color: red; */
 }
 
 .right-section .inbox-sec h2 {
@@ -284,6 +285,7 @@ body {
     margin-top: 10px;
     cursor: pointer;
     /* position: relative; */
+    /* background-color: rgb(0, 208, 255); */
 }
 
 .right-section .add_task_right p {
@@ -302,20 +304,20 @@ body {
     transition: all 0.15s;
 }
 
-.right-section .add-section_inner {
-    width: 100%;
-    height: 25vh;
+.right-section .add_section_inner {
+    width: 60%;
+    /* height: 8vh; */
     border: 1px solid #b8b8b8;
     border-radius: 10px;
     padding: 10px 10px 10px 3px;
     display: flex;
     flex-direction: column;
     /* position: absolute; */
-    opacity: 0;
+    display: none;
     /* z-index: 999; */
 }
 
-.right-section .add-section_inner #Task_name {
+.right-section .add_section_inner #Task_name {
     border: none;
     color: #000000;
     font-size: 14px;
@@ -324,11 +326,11 @@ body {
     outline: none;
 }
 
-.right-section .add-section_inner input::placeholder {
+.right-section .add_section_inner input::placeholder {
     color: #9f999d;
 }
 
-.right-section .add-section_inner #desc {
+.right-section .add_section_inner #desc {
     border: none;
     color: #666;
     font-size: 13px;
@@ -377,13 +379,13 @@ body {
 
 .right-section .after-add-task {
     width: 100%;
+    display: flex;
+        justify-content: flex-start;
 }
 
-.right-section .after-add-task .after_add_task_inner{
-    display: flex;
-    justify-content: flex-start;
-}
-.right-section .after-add-task .after_add_task_inner .complete_task{
+
+
+.right-section .after-add-task .complete_task {
     width: 18px;
     height: 18px;
     border: 1px solid #9f999d;
@@ -391,18 +393,13 @@ body {
     margin-right: 10px;
 }
 
-.right-section .after-add-task .after_add_task_inner  h4{
+.right-section .after-add-task  h4 {
     color: #474c63;
     font-size: 14px;
     font-weight: 400;
 }
 
-.right-section .after-add-task p{
-    font-size: 12px;
-    color: #7e7b7b;
-    font-weight: 400;
-    margin: 8px 0px 0px 28px;
-}
+
 
 
 
@@ -419,13 +416,17 @@ body {
 .right-section .add_section {
     opacity: 0;
     transition: opacity 0.15s;
+    /* display: none;
+    transition: display 0.15s; */
 }
 
 
 .right-section .add_section:hover {
-    cursor: pointer;
     opacity: 1;
     transition: opacity 0.15s;
+    /* display: flex;
+    transition: display 0.15s; */
+    cursor: pointer;
 }
 
 .right-section .add_section .line {
@@ -452,7 +453,7 @@ body {
     /* background-color: #f6efee; */
     border-radius: 15px;
     padding: 0px 10px;
-    
+
 
 }
 
@@ -462,17 +463,17 @@ body {
     justify-content: space-between;
     /* flex-direction: column; */
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .right-section .after_add-section h3 {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .right-section .after_add-section .edit-task img {
     position: relative;
-    margin-left:10px ;
+    margin-left: 10px;
     width: 23px;
     height: 23px;
 }
@@ -501,8 +502,36 @@ body {
     position: absolute;
     /* z-index: 9; */
     /* opacity: 0; */
-   /* background-color: #DC4C3E; */
+    /* background-color: #DC4C3E; */
 
+}
+
+.right-section .after_add-section .add_task_right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 0px;
+    margin-top: 10px;
+    cursor: pointer;
+    /* position: relative; */
+    /* background-color: rgb(0, 8, 255); */
+}
+
+.right-section .after_add-section .add_task_right p {
+    color: #808080;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.15s;
+}
+
+.right-section .after_add-section .add_task_right img {
+    padding-right: 8px;
+}
+
+.right-section .after_add-section .add_task_right:hover p {
+    color: #DC4C3E;
+    transition: all 0.15s;
 }
 
 .right-section .after_add-section .inner_edit_section .edit_section {
@@ -517,6 +546,7 @@ body {
     font-size: 14px;
     font-weight: 400;
 }
+
 .right-section .after_add-section .inner_edit_section .delete_section {
     display: flex;
     justify-content: flex-start;
@@ -540,7 +570,7 @@ body {
     align-items: start;
     /* position: absolute; */
     /* margin-top: 10px; */
-    opacity: 0;
+    display: none;
 
 }
 
@@ -656,10 +686,10 @@ body {
 
 }
 
-.none{
+.none {
     display: none !important;
 }
 
-.flex{
+.flex {
     display: flex !important;
 }
