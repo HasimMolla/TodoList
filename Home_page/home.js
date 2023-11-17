@@ -155,8 +155,8 @@ let displayData = () => {
             <div class="inner_after_add_section">
                     <h3>${element.nameSection}</h3>
                     <div class="edit-task">
-                        <img  onclick="removeSection(${i})"  src="../assets/delete_icon.png" alt="" />
-                         <img onclick="funEdit(${i})" src="../assets/edit_icon.png" alt="" />
+                       <img onclick="removeSection(${i})" src="../assets/delete_sec.svg" alt="" />
+                         <img onclick="funEdit(${i})" src="../assets/edit_sec.svg" alt="" />
                     </div>
 
                   
@@ -173,7 +173,7 @@ let displayData = () => {
 
                     
 
-        `
+        `;
     });
 
 
