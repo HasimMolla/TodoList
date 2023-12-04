@@ -28,7 +28,7 @@ const sectionForm = document.querySelector('form')
 
 // Form Validation
 if (!localStorage.getItem('loginValidation')) {
-    window.location.href = '/Login'
+    window.location.href = '/login'
 }
 
 

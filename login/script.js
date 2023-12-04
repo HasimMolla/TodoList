@@ -19,5 +19,5 @@ loginBtn.addEventListener('click', (e) => {
         return alert('Enter a valid PIN')
     }
     localStorage.setItem('loginValidation', true)
-    window.location.href = "/Home_page"
+    window.location.href = "../home_page"
 })

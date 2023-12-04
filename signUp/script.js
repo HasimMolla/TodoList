@@ -18,7 +18,7 @@ signUpBtn.addEventListener('click', (e) => {
     
 
     localStorage.setItem('pin', getPin.value)
-    window.location.href = "/login"
+    window.location.href = "../login"
 
 })
 
